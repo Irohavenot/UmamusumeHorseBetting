@@ -1,0 +1,20 @@
+table {
+    background-color: #0e0e0e;
+    color: #fefefe;
+}
+
+button{
+    width: 40%;
+    height: 70px;
+    font-size: medium;
+    background-color: #d64949;
+    border: 0;
+    margin-right: 10px;
+    color: #fefefe;
+}
+
+button:hover{
+    cursor: pointer;
+    transition: 8ms;
+    background-color: #c53737;
+}
