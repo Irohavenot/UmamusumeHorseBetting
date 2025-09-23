@@ -1,8 +1,15 @@
-import { dashboard } from './page/dashboard.js'
-import { button } from './components/button.js';
+import { registerPage } from "./page/register.js";
+import { loginPage } from "./page/login.js";
+import { dashboardPage } from "./page/dashboard.js";
 
-function main() {   
-   dashboard();
+function loadApp() {
+    const currentUser = localStorage.getItem("currentUser");
+
+    if (!currentUser) {
+        loginPage(loadApp);
+    } else {
+        dashboardPage(loadApp);
+    }
 }
 
-main();
+loadApp();

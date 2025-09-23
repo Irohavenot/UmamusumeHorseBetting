@@ -1,12 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css"/>
 </head>
 <body>
-    <script type="module" src="app.js"></script>
+
+  <!-- LOGIN PAGE TEMPLATE -->
+ <!-- LOGIN PAGE TEMPLATE -->
+<template id="tpl-login">
+  <!-- background layer -->
+  <div class="bg-wrap">
+  <video class="bg-video" autoplay muted loop playsinline poster="images/cover.png">
+    <source src="scr/ambot.webm" type="video/webm" />
+    <source src="scr/ambot.mp4" type="video/mp4" />
+  </video>
+  <div class="bg-overlay"></div>
+</div>
+
+  </div>
+
+  <main class="auth-page">
+    <section class="auth-card">
+      <div class="auth-header">
+        <img src="images/logo.png" alt="Logo" class="auth-logo" />
+        <h1 class="auth-title">Welcome back</h1>
+        <p class="auth-subtitle">Log in to continue</p>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <div class="form-row">
+          <label for="login-username">Username</label>
+          <input id="login-username" name="username" type="text" placeholder="Enter your username" required />
+        </div>
+
+        <div class="form-row">
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" placeholder="Enter your password" required />
+        </div>
+
+        <button type="submit" class="btn-primary" id="login-submit">Log in</button>
+      </form>
+
+      <div class="auth-footer">
+        <button type="button" class="btn-link" id="to-register">Create an account</button>
+      </div>
+
+      <p class="auth-help" id="login-help"></p>
+    </section>
+  </main>
+</template>
+
+  <!-- REGISTER PAGE TEMPLATE -->
+<!-- REGISTER PAGE TEMPLATE -->
+<template id="tpl-register">
+  <!-- background layer -->
+    <div class="bg-wrap">
+  <video class="bg-video" autoplay muted loop playsinline poster="images/cover.png">
+    <source src="scr/ambot.webm" type="video/webm" />
+    <source src="scr/ambot.mp4" type="video/mp4" />
+  </video>
+  <div class="bg-overlay"></div>
+</div>
+
+  <div class="navbar">
+    <div class="nav-inner">
+      <img src="images/logo.png" alt="Logo" class="nav-logo" />
+      <nav class="nav-links">
+        <a href="#">About</a>
+        <a href="#">Contact Us</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="register-page">
+    <!-- hero text over video (left) -->
+    <section class="register-hero" style="background: transparent;">
+      <div class="hero-text">
+        <h1>Horses from Tracen Academy!</h1>
+        <p>
+          A boarding school for Umamusume located in Tokyo, Japan.
+          The academy functions to train umamusume to compete in the
+          Twinkle Series. Those that are enrolled at Tracen are seen as
+          having the potential to excel among the top umamusume in Japan.
+          THUS, they are given the best training and education possible.
+          <br><br>
+          MAKING BETTING ON EACH HORSES FILL YOU WITH THRILL AND EXCITEMENT!
+        </p>
+      </div>
+    </section>
+
+    <!-- card (right) -->
+    <section class="register-card">
+      <h2>Create your account</h2>
+
+      <form id="register-form" class="auth-form">
+        <div class="form-row">
+          <label for="reg-username">Username</label>
+          <input id="reg-username" name="username" type="text" placeholder="Username" required />
+        </div>
+
+        <div class="form-row">
+          <label for="reg-password">Password</label>
+          <input id="reg-password" name="password" type="password" placeholder="Password" required />
+        </div>
+
+        <button type="submit" class="btn-primary">Register</button>
+      </form>
+
+      <div class="auth-footer">
+        <button type="button" class="btn-link" id="to-login">Back to Login</button>
+      </div>
+
+      <p class="auth-help" id="register-help"></p>
+    </section>
+  </main>
+</template>
+
+
+<!-- DASHBOARD PAGE TEMPLATE -->
+<template id="tpl-dashboard">
+      <div class="bg-wrap">
+    <video class="bg-video" autoplay muted loop playsinline poster="images/cover.png">
+        <source src="scr/ambot.webm" type="video/webm" />
+        <source src="scr/ambot.mp4" type="video/mp4" />
+    </video>
+    <div class="bg-overlay"></div>
+</div>
+  <div class="navbar">
+    <div class="nav-inner">
+      <img src="images/logo.png" alt="Logo" class="nav-logo" />
+      <nav class="nav-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <button type="button" class="btn-chip" id="btn-profile">Profile</button>
+        <button type="button" class="btn-chip" id="btn-logout">Logout</button>
+      </nav>
+    </div>
+  </div>
+
+  <main class="dashboard">
+    <section class="dash-header">
+      <h1 class="dash-title">Welcome, <span id="dash-username"></span></h1>
+    </section>
+
+    <section class="dash-grid">
+  <!-- Races LEFT -->
+        <div class="dash-card card-races">
+            <h2 class="card-title">Horse Races</h2>
+            <div id="race-list" class="race-list"></div>
+        </div>
+
+        <!-- Details RIGHT -->
+        <div class="dash-card card-details">
+            <h2 class="card-title">Race Details</h2>
+            <div id="race-details"></div>
+        </div>
+
+        <!-- Users (smaller) bottom-right -->
+        <div class="dash-card card-users">
+            <h2 class="card-title">Users</h2>
+            <div id="users-table"></div>
+        </div>
+        </section>
+
+  </main>
+</template>
+<!-- PROFILE PAGE TEMPLATE -->
+<template id="tpl-profile">
+    <div class="bg-wrap">
+    <img class="bg-image" src="images/Tracen_Academy.png" alt="" />
+    <div class="bg-overlay bg-overlay--dash"></div>
+  </div>
+  <div class="navbar">
+    <div class="nav-inner">
+      <img src="images/logo.png" alt="Logo" class="nav-logo" />
+      <nav class="nav-links">
+        <button type="button" class="btn-chip" id="btn-back-dash">Back to Dashboard</button>
+        <button type="button" class="btn-chip" id="btn-logout">Logout</button>
+      </nav>
+    </div>
+  </div>
+
+  <main class="profile">
+    <header class="profile-header">
+      <h1 class="profile-title" style="color: white;"><span id="profile-username" ></span>’s Profile</h1>
+    </header>
+
+    <section class="profile-grid">
+      <div class="dash-card">
+        <h2 class="card-title">Stats</h2>
+        <div class="stat-row"><span>Total Earnings</span><strong id="stat-earnings">₱0</strong></div>
+        <div class="stat-row"><span>Total Lost Bets</span><strong id="stat-losses">₱0</strong></div>
+      </div>
+
+      <div class="dash-card">
+        <h2 class="card-title">Bet History</h2>
+        <div id="history-mount"></div>
+        <p class="muted" id="no-history" style="display:none;">No bet history yet.</p>
+      </div>
+    </section>
+  </main>
+</template>
+
+<div id="app"></div>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
