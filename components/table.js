@@ -1,4 +1,4 @@
-// Renders a table with headers + rows
+
 export const Table = (headers, rows) => {
     const table = document.createElement("table");
     table.border = "1";

@@ -1,14 +1,14 @@
-// /page/login.js
+
 import { registerPage } from "./register.js";
 
 export function loginPage(reloadApp) {
-  // DO NOT clear body. Mount into #app.
+
   const mount = document.getElementById("app");
   const tpl = document.getElementById("tpl-login");
   if (!tpl) { console.error("tpl-login not found"); return; }
   mount.replaceChildren(tpl.content.cloneNode(true));
 
-  // wire up events
+
   const form = document.getElementById("login-form");
   const help = document.getElementById("login-help");
   const toRegister = document.getElementById("to-register");

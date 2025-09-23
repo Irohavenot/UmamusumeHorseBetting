@@ -1,4 +1,4 @@
-// /page/dashboard.js
+
 import { Button } from "../components/button.js";
 import { Table } from "../components/table.js";
 import { RaceCard } from "../components/raceCard.js";
@@ -72,7 +72,6 @@ export function dashboardPage(reloadApp) {
   const raceList = document.getElementById("race-list");
   const detailsEl = document.getElementById("race-details");
 
-  // ------- helpers (re-renderers) -------
   function getBets() {
     return JSON.parse(localStorage.getItem("bets") || "{}");
   }
@@ -124,7 +123,7 @@ detailsEl.appendChild(grid);
 const thisRaceBets = bets[race.id] || [];
 
         race.horses.forEach((horse, idx) => {
-        // If total % 3 === 2, insert a spacer before the last 2 to center them
+    // If total % 3 === 2, insert a spacer before the last 2 to center them
         if (race.horses.length % 3 === 2 && idx === race.horses.length - 2) {
             const spacer = document.createElement("div");
             spacer.className = "horse-card spacer";
@@ -189,7 +188,6 @@ amountEl.addEventListener('input', () => {
   amountEl.value = new Intl.NumberFormat('en-PH').format(digits ? Number(digits) : 0);
 });
 
-// then parse on submit:
 const selectEl = betForm.querySelector("#bet-horse");
 
 grid.addEventListener("click", (e) => {
@@ -198,7 +196,6 @@ grid.addEventListener("click", (e) => {
   const horse = card.dataset.horse;
   selectEl.value = horse;
 
-  // small visual feedback
   grid.querySelectorAll(".horse-card").forEach(c => c.classList.remove("selected"));
   card.classList.add("selected");
 });
@@ -227,7 +224,7 @@ grid.addEventListener("click", (e) => {
 
     const resultBtn = document.createElement("button");
     resultBtn.textContent = "View Race Results";
-    resultBtn.className = "btn btn-primary"; // same look as Log in
+    resultBtn.className = "btn btn-primary"; 
     resultBtn.style.marginRight = "8px";
     resultBtn.addEventListener("click", () => simulateRace(race));
     actions.appendChild(resultBtn);
@@ -276,7 +273,7 @@ grid.addEventListener("click", (e) => {
 
     // Re-render everything that depends on users/bets
     renderUsersTable();
-    renderRaces(); // no selected id; details will be cleared below
+    renderRaces(); 
     detailsEl.innerHTML = ""; // race is over, clear details
   }
 
@@ -286,8 +283,7 @@ grid.addEventListener("click", (e) => {
     const bets = getBets();
 
     races.forEach(race => {
-      // optionally, your RaceCard might show pool by itself; otherwise you can
-      // compute total pool here if you want to inject it into RaceCard props.
+
       const card = RaceCard(
         race,
         // on "view details" in card:
@@ -307,7 +303,6 @@ grid.addEventListener("click", (e) => {
       raceList.appendChild(item);
 
       if (selectedRaceId && race.id === selectedRaceId) {
-        // keep the same race expanded after re-render
         showRaceDetails(race);
       }
     });

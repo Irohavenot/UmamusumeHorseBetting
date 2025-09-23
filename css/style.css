@@ -116,7 +116,7 @@ html, body {
   border-color: rgba(0,0,0,0.12);
 }
 
-/* Auth primary (only on forms) full-width */
+
 .auth-form .btn-primary { width: 100%; margin-top: 4px; }
 
 .auth-footer { display: flex; justify-content: center; margin-top: 12px; }
@@ -214,7 +214,6 @@ html, body {
 .dash-header { margin-bottom: 10px; }
 .dash-title { color: #f8fafc; text-shadow: 0 1px 2px rgba(0,0,0,.3); }
 
-/* stacked -> 2 col -> 3 col */
 .dash-grid {
   display: grid;
   grid-template-areas:
@@ -238,7 +237,6 @@ html, body {
   }
 }
 
-/* Cards (glassy) */
 .dash-card {
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(255, 255, 255, 0.35);
@@ -263,25 +261,24 @@ html, body {
 .card-races   { grid-area: races; }
 .card-details { grid-area: details; 
 width: 50vh;}
-/* Make Users card compact & scrollable */
 .card-users {
-  align-self: start;          /* don't stretch */
-  max-width: 30vh;           /* shorter card height */
-  overflow: hidden;           /* hide card overflow; inner area will scroll */
+  align-self: start;       
+  max-width: 30vh;          
+  overflow: hidden;        
   padding: 12px; 
   align-items: center;   
-  justify-content: center; /* a touch tighter */
+  justify-content: center; 
 }
 .card-users .card-title { margin-bottom: 10px; }
 
-/* Inner scrolling area (already present, just refine) */
+
 .card-users #users-table {
-  max-height: calc(32vh - 46px); /* subtract title + padding */
+  max-height: calc(32vh - 46px); 
   overflow: auto;
   font-size: 0.9rem;
   line-height: 1.25;
 }
-/* Compact table styles only inside Users card */
+
 .card-users #users-table table {
   width: 100%;
   border-collapse: collapse;
@@ -289,7 +286,7 @@ width: 50vh;}
 .card-users #users-table th,
 .card-users #users-table td {
   padding: 6px 8px;
-  white-space: nowrap;   /* remove if you want wrapping */
+  white-space: nowrap;   
 }
 .card-users #users-table tr:nth-child(even) {
   background: rgba(0,0,0,0.04);
@@ -311,7 +308,6 @@ width: 50vh;}
   clear: both;
 }
 
-/* inline race icon */
 .race-inline-icon {
   height: 1em;
   width: auto;
@@ -322,7 +318,7 @@ width: 50vh;}
 
 /* Race details controls */
 #race-details > * + * { margin-top: 8px; }
-.card-details .btn-primary { width: auto; } /* primary look, not full width inside the card */
+.card-details .btn-primary { width: auto; } 
 
 /* ===== Fullscreen background ===== */
 .bg-wrap { position: fixed; inset: 0; z-index: 0; }
@@ -334,12 +330,12 @@ width: 50vh;}
 .bg-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.5); }
 .bg-overlay.bg-overlay--dash { background: rgba(0, 0, 0, 0.58); }
 
-/* Foreground above bg */
+
 .auth-page, .register-page, .dashboard, .profile {
   position: relative; z-index: 1;
 }
 
-/* Optional: bump contrast for cards */
+
 .auth-card, .register-card, .dash-card { backdrop-filter: saturate(1.1); }
 
 /* ——— Profile layout ——— */
@@ -367,8 +363,7 @@ width: 50vh;}
   color: #fff;
 }
 
-/* ---------- Utility: screen-reader only ---------- */
-/* ---------- A11y helper ---------- */
+
 .sr-only {
   position: absolute !important;
   width: 1px; height: 1px;
@@ -405,12 +400,12 @@ width: 50vh;}
   box-shadow: 0 0 0 4px var(--ring);
 }
 
-/* Remove number spinners (optional) */
+
 .form-input[type="number"]::-webkit-outer-spin-button,
 .form-input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .form-input[type="number"] { -moz-appearance: textfield; }
 
-/* Custom dropdown arrow (keeps native behavior) */
+
 .form-select {
   appearance: none;
   background-image:
@@ -418,7 +413,7 @@ width: 50vh;}
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 12px 8px;
-  padding-right: 32px; /* room for arrow */
+  padding-right: 32px; 
 }
 
 /* ---------- Bet form layout inside details ---------- */
@@ -431,10 +426,10 @@ width: 50vh;}
 .bet-controls .form-select { min-width: 180px; }
 .bet-controls .form-input  { width: 140px; }
 
-/* Keep primary buttons inside cards from stretching full width */
+
 .card-details .btn-primary { width: auto; }
 
-/* Optional: tidy the details heading */
+
 #race-details > h4 { margin: 0 0 8px; font-size: 16px; }
 
 /* Horse gallery */
@@ -467,7 +462,7 @@ width: 50vh;}
 
 .horse-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;        /* or 1 / 1 if you prefer squares */
+  aspect-ratio: 4 / 3;        
   object-fit: cover;
   border-radius: 10px;
 }
@@ -484,10 +479,8 @@ width: 50vh;}
   color: var(--muted);
 }
 
-/* Spacer occupies one grid cell to center a 2-item last row (3–2 layout) */
 .horse-card.spacer { visibility: hidden; }
 
-/* Responsive: 2 columns on narrow screens; spacer not needed */
 @media (max-width: 700px) {
   .horse-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .horse-card.spacer { display: none; }

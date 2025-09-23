@@ -1,4 +1,4 @@
-// components/raceCard.js
+
 import { Button } from "./button.js";
 
 export const RaceCard = (race, onOpen, bets) => {
@@ -29,7 +29,6 @@ export const RaceCard = (race, onOpen, bets) => {
   totalSpan.textContent = `Total Pool: ₱${total}`;
   bottomDiv.appendChild(totalSpan);
 
-  // View Race button -> only opens the RIGHT-SIDE details
   const viewBtn = Button("View Race", () => onOpen(race));
   viewBtn.classList.add("btn", "btn-secondary", "btn-small");
   bottomDiv.appendChild(viewBtn);

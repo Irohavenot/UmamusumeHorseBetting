@@ -1,4 +1,4 @@
-// /page/profilePage.js
+
 import { Table } from "../components/table.js";
 
 export function profilePage(currentUser, reloadApp) {

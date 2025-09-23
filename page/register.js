@@ -1,4 +1,4 @@
-// /page/register.js
+
 export function registerPage(reloadApp) {
   const mount = document.getElementById("app");
   const tpl = document.getElementById("tpl-register");
